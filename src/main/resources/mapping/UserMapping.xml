@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chen.dao.UserDao">
+	<select id="getUserByName" parameterType="java.lang.String" resultType="com.chen.domain.User">
+		select userid,username,password from tuser where username=#{username}
+	</select>
+	<insert id="insertUser" parameterType="com.chen.domain.User">
+		insert into tuser values(#{username},#{password})
+	</insert>
+</mapper>
